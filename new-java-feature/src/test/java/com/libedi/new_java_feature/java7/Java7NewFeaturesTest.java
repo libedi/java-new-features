@@ -1,5 +1,7 @@
 package com.libedi.new_java_feature.java7;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -96,12 +98,15 @@ public class Java7NewFeaturesTest {
 	public void test_UnderscoreLiteral() throws Exception {
 		int oldBillion = 1000000000;
 		int newBillion = 1_000_000_000;
+		assertEquals(oldBillion, newBillion);
 		
 		long oldCreditCardNumber = 1234567890123456L;
-		long newCreditCardNumber = 1234_5678_0123_4567L;
+		long newCreditCardNumber = 1234_5678_9012_3456L;
+		assertEquals(oldCreditCardNumber, newCreditCardNumber);
 		
 		double oldPi = 3.141592;
 		double newPi = 3.14_1592;
+		assertEquals(oldPi, newPi, Double.POSITIVE_INFINITY);
 	}
 	
 	/**
