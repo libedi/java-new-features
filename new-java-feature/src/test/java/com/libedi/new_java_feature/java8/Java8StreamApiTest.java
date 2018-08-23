@@ -16,9 +16,9 @@ public class Java8StreamApiTest {
 	 * 
 	 * Stream API가 있기 전에, Java에서는 Colletion API가 있습니다.
 	 * Collection은 말 그대로 데이터를 담는 역할, 즉 자료구조들의 구현체가 됩니다.
-	 * 그래서 Collection을 다룰 때는 직접 개발자가 구현을 해주어야 했습니다.
+	 * 그래서 Collection의 데이터를 다룰 때는 직접 개발자가 구현을 해주어야 했습니다.
 	 * 이에 반해 Stream API는 데이터를 다루는 역할로 나옵니다.
-	 * 그래서 Stream API에서 제공하는 API를 이용해 개발자가 선언을 해주면 됩니다.
+	 * 그래서 Stream API에서 제공하는 API를 이용해 개발자가 연산에 대한 선언을 해주면 됩니다.
 	 * 대신 Stream 은 데이터의 연산에 목적이 있기 때문에, 요소의 추가/삭제 등은 불가능합니다.
 	 * 
 	 * Stream API의 구조는 다음과 같습니다.
@@ -39,6 +39,7 @@ public class Java8StreamApiTest {
 		int sum = 0;
 		int count = 0;
 		List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		// 개발자가 직접 구현. 외부 반복
 		for(Integer num : list1) {	// 리스트에서 개별 num을 구해서
 			if(num > 5) {			// num이 5보다 크면
 				sum += num;			// 함계를 구하고
@@ -51,6 +52,7 @@ public class Java8StreamApiTest {
 		
 		// Java 8 이후 : What 중심
 		List<Integer> list2 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		// 반복은 Stream 안에서 수행. 내부 반복
 		OptionalDouble optionalAvg = list2.stream()	// 리스트를 스트림으로 바꿔서	(스트림 생성)
 								.filter(n -> n > 5)	// 5보다 큰 n을 골라내서		(중개 연산)
 								.mapToInt(n -> n)	// IntStream으로 변환해서		(중개 연산)
