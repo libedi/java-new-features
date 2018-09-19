@@ -118,7 +118,7 @@ public class Java8OptionalTest {
 	
 	
 	/*
-	 * 이런 코드는 코드 가독성과 유연성, 유지보수성이 떨어진다.
+	 * 이런 코드는 가독성과 유연성, 유지보수성이 떨어진다.
 	 * 이전 Java 버전에서 null을 사용했다면,
 	 * Java 8에서는 "있을지 없을지 모르는 값"의 개념을 도입한다.
 	 * 이른바 java.util.Optional<T> 클래스!
@@ -159,8 +159,8 @@ public class Java8OptionalTest {
 		Order order = optOrder.get();
 		
 		Optional<Order> emptyOrder = Optional.empty();
+		// get()은 NoSuchElementException을 던지므로, isPresent()로 체크가 필요하다.
 		if(emptyOrder.isPresent()) {
-			// get()은 NoSuchElementException을 던지므로, isPresent()로 체크가 필요하다.
 			Order order2 = emptyOrder.get();
 		}
 		
@@ -184,7 +184,7 @@ public class Java8OptionalTest {
 	/**
 	 * 이제 Optional을 이용하여 앞서 본 메서드를 개선해보자.
 	 * Optional을 사용할 때 주의할 점은, null 체크를 하지 않아야 한다는 점.
-	 * 함수적 사고와 Stream API 를 이용하면 깔끔한 코드가 나온다.
+	 * 함수적 사고와 Stream API 를 이용하면 깔끔하고 간결한 코드가 나온다.
 	 */
 	@Test
 	public void test_UseOptional() {

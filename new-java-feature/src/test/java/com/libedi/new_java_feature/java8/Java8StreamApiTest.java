@@ -14,7 +14,7 @@ public class Java8StreamApiTest {
 	 * Java 8의 가장 큰 변화는 람다식과 Stream API의 추가입니다.
 	 * 여기서는 그 중, Stream API에 대해서 알아봅니다.
 	 * 
-	 * Stream API가 있기 전에, Java에서는 Colletion API가 있습니다.
+	 * Stream API가 있기 전에, Java에서는 Collection API가 있습니다.
 	 * Collection은 말 그대로 데이터를 담는 역할, 즉 자료구조들의 구현체가 됩니다.
 	 * 그래서 Collection의 데이터를 다룰 때는 직접 개발자가 구현을 해주어야 했습니다.
 	 * 이에 반해 Stream API는 데이터를 다루는 역할로 나옵니다.
