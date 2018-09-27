@@ -26,6 +26,7 @@ public class Java8DateTimeTest {
 	 * 
 	 * 아래 예제는 다음 링크를 참조하여 만들었습니다.
 	 * http://starplatina.tistory.com/entry/Java-8-새로운-Date-Time-API
+	 * http://blog.eomdev.com/java/2016/04/01/자바8의-java.time-패키지.html
 	 * 
 	 */
 	
